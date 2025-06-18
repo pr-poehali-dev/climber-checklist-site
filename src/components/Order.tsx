@@ -2,15 +2,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Icon from "@/components/ui/icon";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Order = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Здесь будет логика отправки формы
     console.log("Form submitted:", { name, email });
+    // Переход на страницу чек-листа
+    navigate("/checklist");
   };
 
   return (
