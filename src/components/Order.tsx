@@ -1,26 +1,25 @@
-
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import Icon from '@/components/ui/icon';
-import { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import Icon from "@/components/ui/icon";
+import { useState } from "react";
 
 const Order = () => {
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Здесь будет логика отправки формы
-    console.log('Form submitted:', { name, email });
+    console.log("Form submitted:", { name, email });
   };
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white relative overflow-hidden">
       {/* Background texture */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.1" fill-rule="evenodd"%3E%3Cpath d="M20 20c0 11.046-8.954 20-20 20v20h40V20H20z"/%3E%3C/g%3E%3C/svg%3E')]"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMjAgMjBjMCAxMS4wNDYtOC45NTQgMjAtMjAgMjB2MjBoNDBWMjBIMjB6Ii8+PC9nPjwvc3ZnPg==')]"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
@@ -35,7 +34,7 @@ const Order = () => {
                 Начни применять системный подход уже на следующей тренировке
               </p>
             </div>
-            
+
             <div className="space-y-6 mb-8">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center">
@@ -43,32 +42,40 @@ const Order = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg">Мгновенная доставка</h4>
-                  <p className="text-slate-300">Получишь PDF на почту через 2 минуты</p>
+                  <p className="text-slate-300">
+                    Получишь PDF на почту через 2 минуты
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
                   <Icon name="Smartphone" size={20} className="text-white" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg">Мобильная версия</h4>
-                  <p className="text-slate-300">Удобно использовать прямо на скалах</p>
+                  <p className="text-slate-300">
+                    Удобно использовать прямо на скалах
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center">
                   <Icon name="RefreshCw" size={20} className="text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg">Бесплатные обновления</h4>
-                  <p className="text-slate-300">Новые техники и улучшения без доплат</p>
+                  <h4 className="font-semibold text-lg">
+                    Бесплатные обновления
+                  </h4>
+                  <p className="text-slate-300">
+                    Новые техники и улучшения без доплат
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          
+
           {/* Right side - Form */}
           <div className="bg-white rounded-3xl p-8 shadow-2xl">
             <div className="text-center mb-8">
@@ -82,7 +89,7 @@ const Order = () => {
                 Заполни форму и получи материалы на почту
               </p>
             </div>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">
@@ -97,7 +104,7 @@ const Order = () => {
                   required
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">
                   Email для получения чек-листа
@@ -111,21 +118,21 @@ const Order = () => {
                   required
                 />
               </div>
-              
-              <Button 
-                type="submit" 
-                size="lg" 
+
+              <Button
+                type="submit"
+                size="lg"
                 className="w-full bg-red-500 hover:bg-red-600 text-white h-14 text-lg font-semibold"
               >
                 <Icon name="Download" size={20} className="mr-2" />
                 Получить чек-лист бесплатно
               </Button>
             </form>
-            
+
             <p className="text-sm text-slate-500 text-center mt-4">
               Нажимая кнопку, ты соглашаешься с обработкой персональных данных
             </p>
-            
+
             <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-slate-200">
               <div className="flex items-center gap-2 text-slate-600">
                 <Icon name="Users" size={16} />
@@ -139,7 +146,7 @@ const Order = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
       <div className="absolute bottom-20 right-20 w-1.5 h-1.5 bg-red-400 rounded-full animate-pulse delay-500"></div>
